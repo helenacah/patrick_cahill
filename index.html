@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Cahill (1894-1917) - In Memory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sepia-dark: #1a1612;
+            --sepia-text: #3d3428;
+            --sepia-light: #f4ede3;
+            --sepia-accent: #8b6f47;
+            --bronze: #cd7f32;
+            --memorial-red: #9d2235;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--sepia-text);
+            background: var(--sepia-light);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(205, 127, 50, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(157, 34, 53, 0.02) 0%, transparent 50%);
+        }
+
+        .page-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 30px 100px;
+            position: relative;
+        }
+
+        /* Memorial Header with fade-in animation */
+        .memorial-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            border-top: 3px solid var(--memorial-red);
+            border-bottom: 3px solid var(--memorial-red);
+            background: linear-gradient(to bottom, 
+                rgba(157, 34, 53, 0.03) 0%, 
+                transparent 50%, 
+                rgba(157, 34, 53, 0.03) 100%);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .memorial-header h1 {
+            font-family: 'EB Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--sepia-dark);
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .memorial-header .dates {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--sepia-accent);
+            margin-bottom: 8px;
+        }
+
+        .memorial-header .lest-we-forget {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--memorial-red);
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        /* Section styling */
+        section {
+            margin-bottom: 70px;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-family: 'EB Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--sepia-dark);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bronze);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h3 {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--sepia-dark);
+            margin: 30px 0 16px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Portrait image styling */
+        .portrait-container {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            box-shadow: 
+                0 4px 6px rgba(0, 0, 0, 0.07),
+                0 1px 3px rgba(0, 0, 0, 0.06),
+                inset 0 0 0 1px rgba(139, 111, 71, 0.1);
+            border-radius: 2px;
+        }
+
+        .portrait-container img {
+            max-width: 350px;
+            width: 100%;
+            height: auto;
+            filter: sepia(0.15) contrast(1.05);
+            border: 8px solid var(--sepia-light);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .portrait-container .caption {
+            margin-top: 16px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--sepia-accent);
+        }
+
+        .portrait-container .caption a {
+            color: var(--memorial-red);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--memorial-red);
+        }
+
+        .portrait-container .caption a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* Document images styling */
+        .document-image {
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            box-shadow: 
+                0 2px 8px rgba(0, 0, 0, 0.08),
+                inset 0 0 0 1px rgba(139, 111, 71, 0.08);
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .document-image img {
+            max-width: 100%;
+            height: auto;
+            filter: sepia(0.08) contrast(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Links */
+        a {
+            color: var(--memorial-red);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(157, 34, 53, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--bronze);
+            border-bottom-color: var(--bronze);
+        }
+
+        /* Lists */
+        ul {
+            margin: 20px 0 20px 40px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 8px;
+        }
+
+        li::marker {
+            color: var(--bronze);
+        }
+
+        /* Highlighted text */
+        mark {
+            background: rgba(205, 127, 50, 0.2);
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+
+        /* Quote/Summary box */
+        .summary-box {
+            background: linear-gradient(135deg, rgba(157, 34, 53, 0.04), rgba(205, 127, 50, 0.04));
+            border-left: 4px solid var(--memorial-red);
+            padding: 30px;
+            margin: 40px 0;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Footer memorial */
+        .memorial-footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 2px solid var(--bronze);
+            font-style: italic;
+            color: var(--sepia-accent);
+        }
+
+        .memorial-footer .poppy {
+            font-size: 2rem;
+            color: var(--memorial-red);
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .memorial-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-wrapper {
+                padding: 40px 20px 80px;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            body {
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Subtle paper texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.03) 2px, rgba(0,0,0,.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,.03) 2px, rgba(0,0,0,.03) 4px);
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="memorial-header">
+            <h1>Patrick Cahill</h1>
+            <div class="dates">1894 – 1917</div>
+            <div class="lest-we-forget">Lest We Forget</div>
+        </header>
+
+        <section class="portrait-section">
+            <div class="portrait-container">
+                <img src="media/image11.jpg" alt="Patrick Cahill portrait">
+                <div class="caption">
+                    Courtesy: <a href="https://www.veterans.gc.ca/en/remembrance/memorials/canadian-virtual-war-memorial/614469" target="_blank">Canadian Virtual War Memorial</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Summary</h2>
+            <div class="summary-box">
+                <p>Patrick Cahill was born in 1894 to Bridget Flanagan & Patrick Cahill. In 1895, his sister Mary Cahill was born. When Patrick was just 3, his father died. Bridget Flanagan then remarried Denis Hayes and had a further 9 children.</p>
+
+                <p>Patrick emigrated to the US in 1912 when he was just 17. In 1913 he made his way to Canada (possibly to his uncle Tom Flanagan in Alberta), and enlisted in the Canadian Army in 1915. In April 1916 he was sent to England and on to France to fight in WW1.</p>
+
+                <p>On April 9th, 1917 (Easter Monday) he was part of the Canadian regiment that fought in the Battle of Vimy Ridge and sadly, Patrick didn't survive that day. He was killed in action and is buried in a British military cemetery in France. He was just 23 when he died.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Birth</h2>
+            <p>Patrick was born in 1894 to Bridget Flanagan & Patrick Cahill. His sister Mary Cahill was born in 1895. His father, Patrick, died in 1897 and his mother Bridget then remarried Denis Hayes and had a further 9 children with Denis.</p>
+
+            <p>Patrick's mother, Bridget Flanagan, was a sister of Michael Flanagan, Ellen Flanagan's (my grandmother) father. So Patrick Cahill was a nephew of Michael Flanagan and a first cousin of my grandmother Ellen.</p>
+
+            <p>See family tree below (Patrick in the bottom left corner).</p>
+
+            <div class="document-image">
+                <img src="media/image9.png" alt="Family tree showing Patrick Cahill">
+            </div>
+        </section>
+
+        <section>
+            <h2>Emigration</h2>
+            <p>Patrick emigrated to the US in 1912. I found a record of him on the ship manifest for the "SS Baltic". See third entry from the bottom and continued on next page.</p>
+
+            <div class="document-image">
+                <img src="media/image28.jpg" alt="SS Baltic ship manifest page 1">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image27.jpg" alt="SS Baltic ship manifest page 2">
+            </div>
+        </section>
+
+        <section>
+            <h2>Canada</h2>
+            <p>The only record I could find for a Patrick F. Cahill crossing over into Canada was in 1913, for a rail crossing, on the New York to Ontario rail line. The age, 19, matches to his DOB. See second entry in following image.</p>
+
+            <div class="document-image">
+                <img src="media/image21.jpg" alt="Canadian border crossing record">
+            </div>
+        </section>
+
+        <section>
+            <h2>Enlistment to CEF (Canadian Expeditionary Force)</h2>
+            <p>On Ancestry, I found military records for Patrick, following his enlistment in Edmonton, Alberta, Canada on May 14th, 1915. His regiment number was 437244, which is listed on all his military records.</p>
+
+            <p>See his "Attestation Paper" following:</p>
+
+            <div class="document-image">
+                <img src="media/image2.jpg" alt="Patrick Cahill Attestation Paper">
+            </div>
+
+            <p>The following pages were all contained in his military folder:</p>
+
+            <div class="document-image">
+                <img src="media/image26.jpg" alt="Military record page 1">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image15.jpg" alt="Military record page 2">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image17.jpg" alt="Military record page 3">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image20.jpg" alt="Military record page 4">
+            </div>
+
+            <p>On April 18th, 1916, Patrick was on board the "SS Missambie" on route to England.</p>
+
+            <div class="document-image">
+                <img src="media/image8.jpg" alt="SS Missambie passenger list page 1">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image6.jpg" alt="SS Missambie passenger list page 2">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image4.jpg" alt="SS Missambie passenger list page 3">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image3.jpg" alt="SS Missambie passenger list page 4">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image10.jpg" alt="SS Missambie passenger list page 5">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image5.jpg" alt="SS Missambie passenger list page 6">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image1.jpg" alt="SS Missambie passenger list page 7">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image22.jpg" alt="Military document page 8">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image24.jpg" alt="Military document page 9">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image19.jpg" alt="Military document page 10">
+            </div>
+
+            <p>The following record is in the Canada War Graves Registers (Circumstances of Casualty)</p>
+
+            <div class="document-image">
+                <img src="media/image23.jpg" alt="War Graves Register - Circumstances of Casualty">
+            </div>
+        </section>
+
+        <section>
+            <h2>Burial</h2>
+            <p><mark>Patrick was buried in the Cabaret-Rouge British Cemetery in Nord-Pas-de-Calais, France. A headstone with his name, regiment number, DOB & DOD is here.</mark></p>
+
+            <div class="document-image">
+                <img src="media/image25.jpg" alt="Patrick Cahill's headstone">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image14.jpg" alt="Cabaret-Rouge Cemetery document 1">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image16.jpg" alt="Cabaret-Rouge Cemetery document 2">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image7.jpg" alt="Cemetery register page">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image18.jpg" alt="Cemetery location information">
+            </div>
+
+            <p>The following report of Patrick, I found here: <a href="https://www.veterans.gc.ca/en/remembrance/memorials/canadian-virtual-war-memorial/614469" target="_blank">Canadian Virtual War Memorial</a></p>
+
+            <div class="document-image">
+                <img src="media/image13.jpg" alt="Virtual War Memorial report page 1">
+            </div>
+
+            <div class="document-image">
+                <img src="media/image12.jpg" alt="Virtual War Memorial report page 2">
+            </div>
+        </section>
+
+        <section>
+            <h2>Battle of Vimy Ridge (April 9th, 1917 - April 12th, 1917)</h2>
+            <p>The <strong>Battle of Vimy Ridge</strong> (9–12 April 1917) was a defining First World War engagement in northern France where the <strong>Canadian Corps</strong> captured a strategically vital, heavily fortified ridge from the German 6th Army. It is widely considered a "coming of age" moment for Canada, as it was the first time all four divisions of the Canadian Corps fought together as a single formation.</p>
+
+            <h3>Key Details of the Battle</h3>
+            <ul>
+                <li><strong>Date:</strong> 9 April (Easter Monday) to 12 April 1917.</li>
+                <li><strong>Location:</strong> Vimy Ridge, near Arras, France—a 7-km long escarpment overlooking the Douai Plain.</li>
+                <li><strong>Commanders:</strong> Led by British General <strong>Sir Julian Byng</strong> and Canadian Major-General <strong>Arthur Currie</strong>.</li>
+                <li><strong>Result:</strong> A decisive Allied victory that captured the ridge, forcing a German retreat of three kilometres.</li>
+                <li><strong>Casualties:</strong> The victory came at a heavy cost of <strong>10,602 Canadian casualties</strong>, including 3,598 fatalities.</li>
+            </ul>
+
+            <h3>Innovative Tactics & Preparation</h3>
+            <p>The success at Vimy is attributed to unprecedented <a href="https://www.veterans.gc.ca/en/remembrance/military-history/first-world-war/battle-vimy-ridge" target="_blank">meticulous planning</a> and technical innovation:</p>
+
+            <ul>
+                <li><strong>Creeping Barrage:</strong> Infantry advanced in precise 100-yard increments immediately behind a moving wall of artillery fire, catching Germans before they could leave their bunkers.</li>
+                <li><strong>Tunneling (Subways):</strong> Extensive underground networks allowed thousands of troops to move to the front lines safely and unseen.</li>
+                <li><strong>Intelligence for All:</strong> For the first time, detailed maps and objectives were distributed to every soldier, not just officers, so the advance could continue even if leaders were hit.</li>
+                <li><strong>"Week of Suffering":</strong> A massive preliminary bombardment of over one million shells "softened" German defences for a week before the attack.</li>
+            </ul>
+
+            <p>The <strong>creeping barrage</strong> was a "wall of fire" created by hundreds of artillery pieces that moved forward in timed increments, allowing infantry to advance safely behind it. This tactic replaced the ineffective strategy of long, stationary bombardments, which often gave defenders enough time to man their machine guns once the shelling stopped.</p>
+
+            <h3>How it Worked at Vimy Ridge</h3>
+            <ul>
+                <li><strong>Precise Timing:</strong> The artillery was synchronized to "lift" its fire and move forward at a set pace—at Vimy, this was typically <strong>100 yards every 3 minutes</strong>.</li>
+                <li><strong>Infantry "Leaning Into" the Barrage:</strong> Canadian soldiers were trained to stay as close as <strong>50 to 80 yards</strong> behind the falling shells. This was dangerous but essential; it ensured they reached German trenches before the defenders could emerge from their deep underground bunkers.</li>
+                <li><strong>The "Shield" Effect:</strong> The barrage didn't just kill; it suppressed the enemy with noise, dust, and smoke, effectively acting as a moving shield for the advancing Canadians.</li>
+                <li><strong>Open-Loop Coordination:</strong> Because there were no portable radios for real-time adjustments, the entire operation relied on a strict <strong>prearranged schedule</strong>. Soldiers carried detailed maps showing exactly where the barrage would be at specific times.</li>
+            </ul>
+
+            <p>The Canadian attack plan at Vimy Ridge used <strong>four color-coded objective lines</strong>—Black, Red, Blue, and Brown—to coordinate the advance of 100,000 soldiers across the 7-kilometre front. This "phase line" system allowed the <a href="https://vimyfoundation.ca/learn/vimy-ridge" target="_blank">Canadian Corps</a> to maintain momentum by "leapfrogging" fresh troops through those who had already captured earlier targets.</p>
+
+            <h3>The Four Objective Lines</h3>
+            <ul>
+                <li><strong>The Black Line:</strong> The first objective, representing the <strong>German forward defensive positions</strong>. All four divisions reached this line within approximately 35 to 60 minutes of the 5:30 a.m. "zero hour."</li>
+                <li><strong>The Red Line:</strong> The critical second objective. It included <strong>Hill 145</strong> (the ridge's highest point and current site of the memorial) and the "Pimple" (a fortified knoll). Capturing this line gave the Canadians control of the ridge's crest.</li>
+                <li><strong>The Blue Line:</strong> The third objective, which involved capturing the <strong>village of Thélus</strong> and the woods overlooking the Douai Plain. Only the 1st and 2nd Divisions (on the southern, wider part of the front) were tasked with reaching this and the final line.</li>
+                <li><strong>The Brown Line:</strong> The final objective and the <strong>German second main defensive line</strong>. It was located roughly 4,000 yards from the original start line. By 2:00 p.m. on the first day, the 1st and 2nd Divisions had secured this line, effectively completing their primary mission.</li>
+            </ul>
+
+            <h3>The "Leapfrog" Tactic</h3>
+            <p>To prevent soldiers from becoming too exhausted to defend their gains, the <a href="https://en.wikipedia.org/wiki/Battle_of_Vimy_Ridge" target="_blank">Vimy plan</a> used a staggered approach:</p>
+
+            <ol>
+                <li><strong>Initial Wave:</strong> Captured and consolidated the <strong>Black Line</strong>.</li>
+                <li><strong>Support Wave:</strong> Passed through the first group to assault the <strong>Red Line</strong>.</li>
+                <li><strong>Reserve Wave:</strong> Fresh brigades then "leapfrogged" both groups to push toward the <strong>Blue and Brown Lines</strong>.</li>
+            </ol>
+
+            <p>This was all timed to the <a href="https://www.veterans.gc.ca/en/remembrance/military-history/first-world-war/battle-vimy-ridge" target="_blank">creeping barrage</a>. For example, the artillery would pause for a set amount of time at the Black Line to allow the second wave of infantry to move up and prepare for the next "lift" toward the Red Line.</p>
+
+            <h3>National Legacy</h3>
+            <p>The battle is often called the "birth of a nation" for Canada. Following the victory, Arthur Currie was knighted and became the first Canadian to command the Canadian Corps. Today, the <a href="https://vimyfoundation.ca/learn/vimy-ridge" target="_blank">Canadian National Vimy Memorial</a> stands on <strong>Hill 145</strong>, the ridge's highest point, on land granted to Canada in perpetuity by France. It is inscribed with the names of 11,285 Canadians killed in France with no known grave.</p>
+
+            <p>Great YouTube video outlining tactics & some footage from the Battle of Vimy Ridge:<br>
+            <a href="https://www.youtube.com/watch?v=Gj7VfXux-Gc" target="_blank">https://www.youtube.com/watch?v=Gj7VfXux-Gc</a></p>
+        </section>
+
+        <footer class="memorial-footer">
+            <span class="poppy">🌺</span>
+            <p>In loving memory of Patrick Cahill and all those who gave their lives in service.</p>
+            <p>"At the going down of the sun and in the morning, we will remember them."</p>
+        </footer>
+    </div>
+</body>
+</html>
